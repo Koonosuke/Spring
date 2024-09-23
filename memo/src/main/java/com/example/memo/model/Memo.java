@@ -14,6 +14,7 @@ public class Memo {
     private Long id;
 
     @Column(length = 20, nullable = false)
+    
     private String memo;
 
     // Getter
