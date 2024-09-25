@@ -9,8 +9,8 @@ import jakarta.persistence.Id;
 @Entity
 public class Memo {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id//データベースのテーブルと対応するエンティティであることを示す
+    @GeneratedValue(strategy = GenerationType.IDENTITY)//idがデータベースで自動的に生成される
     private Long id;
 
     @Column(length = 20, nullable = false)

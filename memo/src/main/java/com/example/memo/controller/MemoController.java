@@ -33,7 +33,6 @@ public class MemoController {
     public List<Memo> getAllMemos() {
         return memoService.getAllMemos();
     }
-
     @PostMapping//HTTPのPOSTリクエストを処理
     public ResponseEntity<Memo> addMemo(@RequestBody Memo memo) {//リクエストのJSONデータを Memo オブジェクトに変換
         if (memo == null || memo.getMemo() == null || memo.getMemo().isEmpty()) {//isEmptyは空白で（文字として扱われない場合の例外処理）
@@ -44,7 +43,8 @@ public class MemoController {
             Memo savedMemo = memoService.addMemo(memo);
             return ResponseEntity.status(HttpStatus.CREATED).body(savedMemo); // 201 OK
         } catch (Exception e) {
-            // エラーログを出力
+            // エラーログ!!
+            
             e.printStackTrace();
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build(); // 500 エラー
         }
